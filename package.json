@@ -1,25 +1,39 @@
 {
-  "name": "adv_books_api",
+  "name": "advanced_books_api",
   "version": "0.0.0",
   "private": true,
   "scripts": {
     "start": "node ./bin/www",
     "start:dev": "nodemon ./bin/www",
-    "test": "mocha --recursive --exit specs"
+    "test": "NODE_ENV=test NODE_NO_WARNINGS=1 mocha"
   },
   "dependencies": {
     "body-parser": "~1.13.2",
     "cookie-parser": "~1.3.5",
+    "debug": "^2.6.9",
     "express": "~4.13.1",
-    "mysql2": "^2.1.0",
+    "fresh": "^0.5.2",
+    "negotiator": "^0.6.1",
     "pg": "^8.0.0",
     "pg-hstore": "^2.3.3",
     "sequelize": "^5.21.6"
   },
   "devDependencies": {
     "chai": "^4.2.0",
+    "chai-subset": "^1.6.0",
+    "factory-girl": "^5.0.4",
     "mocha": "^7.1.1",
     "nodemon": "^2.0.2",
+    "sequelize-test-helpers": "^1.2.2",
+    "sinon": "^9.0.2",
+    "sinon-chai": "^3.5.0",
     "supertest": "^4.0.2"
+  },
+  "mocha": {
+    "package": "./package.json",
+    "reporter": "spec",
+    "exit": true,
+    "recursive": true,
+    "full-trace": false
   }
 }
